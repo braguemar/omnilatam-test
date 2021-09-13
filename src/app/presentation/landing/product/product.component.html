@@ -1,0 +1,12 @@
+<div class="card w-100 product">
+  <img class="card-img-top product__image" [src]="product.image" [alt]="product.make + product.model">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-baseline">
+      <h5 class="card-title">{{ product.make | titlecase}} {{ product.model | lowercase }}</h5>
+      <p class="product__price">{{ product.price | currency}}</p>
+    </div>
+    <div class="d-flex justify-content-center">
+      <a class="product__more-info" (click)="onMoreInfo(product)">Show more</a>
+    </div>
+  </div>
+</div>

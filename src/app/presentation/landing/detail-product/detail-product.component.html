@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ product.make + ' ' + product.model | uppercase }}</h4>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-6">
+      <img class="w100" [src]="product.image" [alt]="product.make + product.model">
+    </div>
+    <div class="col-6 pt-4">
+      <ul class="items">
+        <li>
+          <b>Marca: </b> {{ product.make }}
+        </li>
+        <li>
+          <b>Model: </b> {{ product.model }}
+        </li>
+        <li>
+          <b>Año: </b> {{ product.year }}
+        </li>
+        <li>
+          <b>Transmisión: </b> {{ product.transmission }}
+        </li>
+        <li>
+          <b>Asientos: </b> {{ product.seats }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="modal-footer d-flex justify-content-center">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
+</div>

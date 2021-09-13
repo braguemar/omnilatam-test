@@ -1,0 +1,41 @@
+.product {
+  &__image {
+    max-height: 200px;
+    object-fit: contain;
+  }
+
+  &__more-info {
+    color: #e1a300;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover {
+      @extend .product__more-info;
+    }
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .card-body {
+    position: relative;
+    background-color: #d3d3d3;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      -webkit-clip-path: polygon(50% 0%, 0 50%, 100% 50%);
+      clip-path: polygon(50% 0%, 0 50%, 100% 50%);
+      background-color: #d3d3d3;
+      left: 20px;
+      top: -12px;
+      margin: auto;
+      z-index: 10;
+    }
+  }
+}

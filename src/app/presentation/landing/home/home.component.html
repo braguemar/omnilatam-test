@@ -1,0 +1,24 @@
+<div class="home">
+  <ngb-carousel *ngIf="carouselItems.length" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+      <ng-template ngbSlide *ngFor="let item of carouselItems; first as isFirst">
+        <div class="picsum-img-wrapper">
+          <img class="image-slider" [src]="item.image" [alt]="item.name">
+        </div>
+        <div class="carousel-caption" *ngIf="item.caption" [innerHtml]="item.caption"></div>
+      </ng-template>
+  </ngb-carousel>
+  <div class="d-flex flex-column align-items-center my-4">
+    <h3 class="text-secondary">Best car in town for you</h3>
+    <span class="text-muted">Rent cars from $1,000.00</span>
+  </div>
+  <div class="home__search-box">
+    <input type="text" class="form-control" [formControl]="searchControl" placeholder="Buscar...">
+  </div>
+  <div class="home__products-wrap">
+    <app-product
+      class="home__product-item"
+      *ngFor="let item of items | filterData: FILTER_FIELD: searchControl.value"
+      [product]="item"
+    ></app-product>
+  </div>
+</div>
